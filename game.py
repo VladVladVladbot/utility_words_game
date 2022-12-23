@@ -14,7 +14,7 @@ def get_words() -> Dict[str, List[str]]:
         if os.stat(BASE_WORDS_TXT_PATH).st_size == 0:
             print(generate_msg(f'{Path(BASE_WORDS_TXT_PATH).parts[-1]} is empty!'))
             sys.exit(2)
-        res = {f'word_{index}': line.split('_') for index, line in enumerate(words_txt.read().split('\n'))}
+        res = {f'word_{ind}': line.split('_') for ind, line in enumerate(words_txt.read().split('\n')) if line != '[]'}
         words_txt.close()
     return res
 
@@ -47,9 +47,9 @@ def main() -> None:
     while True:
         try:
             os.system('clear')
-            choice_word, index_random_word = choice(list_of_words)
+            choice_word, index_choice_word = choice(list_of_words)
             while all((choice_word == last_choice_word, len(list_of_words) > 1)):
-                choice_word, index_random_word = choice(list_of_words)
+                choice_word, index_choice_word = choice(list_of_words)
             last_choice_word = choice_word
             w_0, w_1, w_2, cnt_3 = res[choice_word]
 
@@ -64,7 +64,7 @@ def main() -> None:
                 """Words is empty"""
                 if str(cnt_3) == '1':
                     res.pop(choice_word)
-                    list_of_words.pop(index_random_word)
+                    list_of_words.pop(index_choice_word)
                 else:
                     res[choice_word][3] = f"{int(cnt_3) - 1}"
 
