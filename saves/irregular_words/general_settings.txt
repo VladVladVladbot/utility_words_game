@@ -1,0 +1,2 @@
+WORDS_PATH='~/Desktop/MyDoc/projects/game_words/saves/irregular_words/words.txt'
+HISTORY_UPDATE_FREQUENCY=1
