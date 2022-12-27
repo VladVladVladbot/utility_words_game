@@ -1,2 +1,3 @@
-WORDS_PATH='~/Desktop/MyDoc/projects/game_words/saves/irregular_words/words.txt'
+WORDS_PATH=~/Desktop/MyDoc/projects/game_words/saves/irregular_words/words.txt
+NEW_WORDS_PATH=~/Desktop/MyDoc/projects/game_words/saves/new_words/new_words.txt
 HISTORY_UPDATE_FREQUENCY=1
